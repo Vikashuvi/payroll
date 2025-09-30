@@ -2,7 +2,7 @@ import React from 'react';
 import { IoPersonSharp } from "react-icons/io5";
 import { IoMenu } from "react-icons/io5";
 import { signOut } from 'aws-amplify/auth';
-import { useNavigate } from 'react-router-dom';
+import { replace, useNavigate } from 'react-router-dom';
 
 function Navbar() {
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ function Navbar() {
         e.preventDefault()
         try {
             const user = signOut();
-            navigate('/')
+            navigate('/', {replace: true})
         }catch(error) {
             console.log('Error in Logout', error);
         }

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signIn } from 'aws-amplify/auth';
+import { getCurrentUser, signIn } from 'aws-amplify/auth';
 
 function Login(){
     const navigate = useNavigate();
@@ -8,12 +8,35 @@ function Login(){
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
+
+    useEffect( () => {
+        const checkSession = async () => {
+            try {
+                await getCurrentUser();
+                navigate('/dashboard', {replace:true})
+            }catch {
+
+            }
+        }
+        checkSession();
+    }, [navigate])
+
+
     async function handleSubmit(e) {
         e.preventDefault();
         setLoading(true)
         try{
-            const user = await signIn( {username:id, password});
-            navigate('/dashboard')
+            try {
+                await getCurrentUser();
+                navigate('/dashboard', {replace:true});
+                return;
+            }catch {
+
+            }
+
+
+            await signIn( {username:id, password});
+            navigate('/dashboard', {replace: true})
         }catch(error) {
             console.log("Error in sign in", error)
         }finally{
