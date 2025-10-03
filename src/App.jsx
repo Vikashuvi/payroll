@@ -4,6 +4,7 @@ import Login from "./components/Login"
 import Dashboard from "./components/Dashboard";
 import ProtectedRoute from "./services/ProtectedRoute";
 import Employee from "./components/Employee";
+import AddEmployee from "./components/AddEmployeeModel";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           } />
           <Route path="/employee" element={
             <ProtectedRoute>
-              <Employee />
+              <Employee/>
             </ProtectedRoute>
           } />
         </Routes>

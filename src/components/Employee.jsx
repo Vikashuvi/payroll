@@ -1,8 +1,12 @@
 import React from 'react'
 import Navbar from './Navbar'
 import { FaSearch } from "react-icons/fa";
+import AddEmployee from './AddEmployeeModel';
+import { useState } from 'react';
 
 function Employee() {
+    const [showModel , setShowModal] = useState(false);
+
     return (
         <>
             <Navbar />
@@ -15,14 +19,22 @@ function Employee() {
                             </div>
                         <input type="text" name="" id="" placeholder=' Search Employee here...' className='pl-2' />
                         </div>
-                        <button className='bg-blue-600 px-4 py-2 text-white font-bold rounded'>Add Employee</button>
+                        <button className='bg-blue-600 px-4 py-2 text-white font-bold rounded' onClick={ () => setShowModal(true) } >Add Employee</button>
+
+                        {showModel && (
+                            <div className='fixed inset-0 flex items-center justify-center bg-neutral-50'>
+                                <AddEmployee/>
+                            </div>
+                            
+                        )}
+
                     </div>
-                    <div>
+                    {/* <div>
 
                     </div>
                     <div className=''>
                         <button className='bg-blue-600 px-4 py-2 text-white font-bold rounded'>Previous</button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>
