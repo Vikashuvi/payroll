@@ -1,8 +1,12 @@
 import React from 'react';
 import { FaIdBadge } from "react-icons/fa6";
+import { useNavigate } from 'react-router-dom';
 
 
 function EmployeeCard() {
+
+    const navigate = useNavigate();
+
     return (
         <div className='w-[260px] h-[350px] shadow-xl flex flex-col items-center justify-between px-8 py-8'>
             <div className='flex flex-col gap-4'>
@@ -14,7 +18,7 @@ function EmployeeCard() {
                     <p className='text-lg'>Total Employee Lists</p>
                 </div>
             </div>
-            <button className='bg-blue-900/70 px-14 py-2 rounded-lg text-white font-bold'>View All</button>
+            <button className='bg-blue-900/70 px-14 py-2 rounded-lg text-white font-bold cursor-pointer' onClick={()=> navigate('/employee')}>View All</button>
         </div>
     );
 }

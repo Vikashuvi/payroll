@@ -14,7 +14,7 @@ function PayrollCard() {
                     <p className='text-lg'>Process payroll for the current period</p>
                 </div>
             </div>
-            <button className='bg-blue-900/70 px-14 py-2 rounded-lg text-white font-bold'>Configure</button>
+            <button className='bg-blue-900/70 px-14 py-2 rounded-lg text-white font-bold cursor-pointer'>Configure</button>
         </div>
     );
 }

@@ -14,7 +14,7 @@ function SalaryCard() {
                     <p className='text-lg'>Configure salary structures</p>
                 </div>
             </div>
-            <button className='bg-blue-900/70 px-14 py-2 rounded-lg text-white font-bold'>Configure</button>
+            <button className='bg-blue-900/70 px-14 py-2 rounded-lg text-white font-bold cursor-pointer'>Configure</button>
         </div>
     );
 }

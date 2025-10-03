@@ -3,6 +3,7 @@ import React from "react";
 import Login from "./components/Login"
 import Dashboard from "./components/Dashboard";
 import ProtectedRoute from "./services/ProtectedRoute";
+import Employee from "./components/Employee";
 
 function App() {
   return (
@@ -13,6 +14,11 @@ function App() {
           <Route path="/dashboard" element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          } />
+          <Route path="/employee" element={
+            <ProtectedRoute>
+              <Employee />
             </ProtectedRoute>
           } />
         </Routes>

@@ -10,7 +10,7 @@ function Dashboard() {
     return (
         <>
             <Navbar />
-            <div className='flex flex-row justify-center gap-8 w-full'>
+            <div className='flex flex-row justify-center gap-8 pt-8 w-full'>
                 <EmployeeCard />
                 <SalaryCard />
                 <AttendanceCard />

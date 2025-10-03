@@ -14,7 +14,7 @@ function AttendenceCard() {
                     <p className='text-lg'>Manage employee attendance</p>
                 </div>
             </div>
-            <button className='bg-blue-900/70 px-14 py-2 rounded-lg text-white font-bold'>Manage</button>
+            <button className='bg-blue-900/70 px-14 py-2 rounded-lg text-white font-bold cursor-pointer'>Manage</button>
         </div>
     );
 }
